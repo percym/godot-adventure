@@ -1,5 +1,5 @@
 extends PlayerState
-class_name PlayerStateIdle
+class_name PlayerStateWalk
 
 func enter_state()-> void:
 	pass
