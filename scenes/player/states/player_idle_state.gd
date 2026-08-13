@@ -2,4 +2,8 @@ extends PlayerState
 class_name PlayerStateIdle
 
 func enter_state()-> void:
-	pass
+	player.play_direction_anim("idle")
+	
+func _input(event: InputEvent) -> void:
+	if player.is_moving():
+		fsm._transition_to("Walk")

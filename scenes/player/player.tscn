@@ -229,3 +229,16 @@ script = ExtResource("7_0owmy")
 
 [node name="Attack" type="Node" parent="FSM" unique_id=193823165]
 script = ExtResource("8_qek5x")
+
+[node name="FSM2" type="Node" parent="." unique_id=1111006829]
+script = ExtResource("5_p47bc")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="FSM2" unique_id=510380757]
+script = ExtResource("6_75vfm")
+
+[node name="Walk" type="Node" parent="FSM2" unique_id=899908832]
+script = ExtResource("7_0owmy")
+
+[node name="Attack" type="Node" parent="FSM2" unique_id=1907570232]
+script = ExtResource("8_qek5x")

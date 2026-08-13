@@ -8,7 +8,8 @@ signal on_state_transitioned(state_name:String )
 var curr_state: State
 
 func _ready() -> void:
-	await owner.ready
+	if owner:
+		await owner.ready
 	for state: State in get_children():
 		state.fsm = self
 		
@@ -20,6 +21,6 @@ func _transition_to(state_name:String )->void:
 		return
 	
 	curr_state.exit_state()
-	curr_state = get_node(state_name)
+	curr_state = get_node(state_name) as State
 	curr_state.enter_state()
 	on_state_transitioned.emit(curr_state.name)
