@@ -196,6 +196,7 @@ animations = [{
 radius = 8.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1031328451]
+position = Vector2(-1, 0)
 script = ExtResource("1_lvxji")
 
 [node name="Shadow" type="Sprite2D" parent="." unique_id=774050123]
@@ -216,6 +217,7 @@ position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_j4nxn")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2108959336]
+zoom = Vector2(3, 3)
 
 [node name="FSM" type="Node" parent="." unique_id=1688275582]
 script = ExtResource("5_p47bc")
@@ -228,17 +230,4 @@ script = ExtResource("6_75vfm")
 script = ExtResource("7_0owmy")
 
 [node name="Attack" type="Node" parent="FSM" unique_id=193823165]
-script = ExtResource("8_qek5x")
-
-[node name="FSM2" type="Node" parent="." unique_id=1111006829]
-script = ExtResource("5_p47bc")
-initial_state = NodePath("Idle")
-
-[node name="Idle" type="Node" parent="FSM2" unique_id=510380757]
-script = ExtResource("6_75vfm")
-
-[node name="Walk" type="Node" parent="FSM2" unique_id=899908832]
-script = ExtResource("7_0owmy")
-
-[node name="Attack" type="Node" parent="FSM2" unique_id=1907570232]
 script = ExtResource("8_qek5x")

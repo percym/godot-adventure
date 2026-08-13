@@ -4,7 +4,7 @@ class_name Player
 @export_group("Stats")
 @export var max_health:float =10.0
 @export var max_mana:float =10.0
-@export var max_move_speed:float =10.0
+@export var max_move_speed:float =100.0
 @export var damage:float= 5.0;
 @export var crit_chance:float =0.0
 @export var crit_damage:float =10.0
@@ -15,7 +15,7 @@ class_name Player
 
 var last_direction:String = "down"
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if fsm.curr_state:
 		fsm.curr_state.process_state(delta)
 		
@@ -34,7 +34,7 @@ func update_direction(input_vector: Vector2)->void:
 		last_direction = "right" if input_vector.x > 0 else "left"
 	else:
 		last_direction = "down" if input_vector.y > 0 else "up"
-		play_direction_anim("down")
+		play_direction_anim("idle")
 
 func play_direction_anim(anim_name:String)-> void:
 	anim_sprite.play("%s_%s" % [anim_name, last_direction])

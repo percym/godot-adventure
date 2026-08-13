@@ -2,7 +2,7 @@ extends PlayerState
 class_name PlayerStateWalk
 
 func enter_state()-> void:
-	player.play_direction_anim("Walk")
+	player.play_direction_anim("walk")
 	
 	
 func process_state(delta:float) -> void:

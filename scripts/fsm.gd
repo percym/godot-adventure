@@ -8,13 +8,11 @@ signal on_state_transitioned(state_name:String )
 var curr_state: State
 
 func _ready() -> void:
-	if owner:
-		await owner.ready
 	for state: State in get_children():
 		state.fsm = self
 		
 	curr_state=get_node(initial_state) as State
-	curr_state.enter_state()
+	curr_state.enter_state.call_deferred()
 
 func _transition_to(state_name:String )->void:
 	if not has_node(state_name):
