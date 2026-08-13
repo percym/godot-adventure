@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://jsntwxeevih1"]
 
 [ext_resource type="Texture2D" uid="uid://l58lkiu042xv" path="res://Sprites/Actor/Characters/Shadow.png" id="1_gmlin"]
+[ext_resource type="Script" uid="uid://wmtq0d1sh0yy" path="res://scenes/player/player.gd" id="1_lvxji"]
 [ext_resource type="Texture2D" uid="uid://cc0q6egjxfobw" path="res://Sprites/Actor/Characters/Boy/SeparateAnim/Idle.png" id="2_lvxji"]
 [ext_resource type="Texture2D" uid="uid://bacld8ysircpa" path="res://Sprites/Actor/Characters/Boy/SeparateAnim/Walk.png" id="3_p47bc"]
+[ext_resource type="Script" uid="uid://cvymd2y3fjbh1" path="res://scripts/fsm.gd" id="5_p47bc"]
+[ext_resource type="Script" uid="uid://x0pvpaa1okqw" path="res://scenes/player/states/player_idle_state.gd" id="6_75vfm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_75vfm"]
 atlas = ExtResource("2_lvxji")
@@ -191,6 +194,7 @@ animations = [{
 radius = 8.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1031328451]
+script = ExtResource("1_lvxji")
 
 [node name="Shadow" type="Sprite2D" parent="." unique_id=774050123]
 self_modulate = Color(1, 1, 1, 0.19607843)
@@ -210,3 +214,14 @@ position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_j4nxn")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2108959336]
+
+[node name="FSM" type="Node" parent="." unique_id=1688275582]
+script = ExtResource("5_p47bc")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="FSM" unique_id=728597412]
+script = ExtResource("6_75vfm")
+
+[node name="Walk" type="Node" parent="FSM" unique_id=1883374576]
+
+[node name="Attack" type="Node" parent="FSM" unique_id=193823165]
