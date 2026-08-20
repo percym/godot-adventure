@@ -15,7 +15,16 @@ class_name Player
 
 @onready var anim_sprite :AnimatedSprite2D= $AnimSprite
 @onready var health_component: HealthComponent = $HealthComponent
+@onready var enemy_area: Area2D= %EnemyAttackArea
 @onready var fsm: FSM = $FSM
+@onready var weapon:Node2D =$Weapon
+
+@onready var attack_positions: Dictionary={
+	"down":%Down,
+	"left":%Left,
+	"right":%Right,
+	"up":%Up
+}
 
 var curr_exp:float
 var next_level_exp:float
@@ -29,10 +38,6 @@ var curr_mana:float
 func _ready() -> void:
 	setup()
 	
-func _input(event:InputEvent)->void:
-	if event.is_action("ui_accept"):
-		add_exp(300)
-
 func _process(delta: float) -> void:
 	if fsm.curr_state:
 		fsm.curr_state.process_state(delta)
@@ -95,7 +100,8 @@ func use_mana(value:float)->void:
 	curr_mana = max(curr_mana,0)
 	EventBus.on_player_mana_updated.emit(curr_mana,max_mana)
 	
-	
+func enable_weapon_collision(value:bool)->void:
+	enemy_area.monitoring=value
 	
 	
 	

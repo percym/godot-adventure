@@ -7,6 +7,9 @@ func enter_state()-> void:
 	
 func process_state(delta:float) -> void:
 	var input_vector = Input.get_vector("move_left","move_right","move_up","move_down")
+	if Input.is_action_pressed("attack"):
+		fsm._transition_to("Attack")
+		return
 	if input_vector== Vector2.ZERO:
 		fsm._transition_to("Idle")
 		return
