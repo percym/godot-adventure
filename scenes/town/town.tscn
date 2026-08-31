@@ -769,6 +769,8 @@ texture = ExtResource("1_n11nm")
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Sand"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+terrain_set_0/terrain_1/name = "Floor"
+terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_f2a5t")
 
 [node name="Town" type="Node2D" unique_id=1649856343]
