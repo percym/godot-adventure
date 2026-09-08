@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Rpg1"
-run/main_scene="uid://jsntwxeevih1"
+run/main_scene="uid://c5gkng7w5g3h0"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
