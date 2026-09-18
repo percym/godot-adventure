@@ -57,7 +57,6 @@ func update_direction(input_vector: Vector2)->void:
 		last_direction = "right" if input_vector.x > 0 else "left"
 	else:
 		last_direction = "down" if input_vector.y > 0 else "up"
-		play_direction_anim("idle")
 
 func play_direction_anim(anim_name:String)-> void:
 	anim_sprite.play("%s_%s" % [anim_name, last_direction])
