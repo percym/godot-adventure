@@ -3608,6 +3608,24 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_06row")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vpkg"]
+bg_color = Color(0.14901961, 0.16470589, 0.20784314, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jil70"]
+bg_color = Color(0.28627452, 0.30588236, 0.36862746, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
 [node name="Town" type="Node2D" unique_id=1649856343]
 
 [node name="Terrain" type="Node2D" parent="." unique_id=1172271546]
@@ -3628,3 +3646,68 @@ tile_map_data = PackedByteArray("AADt//b/AAAAAAAAAADt//f/AAAAAAEAAADt//j/AAAAAAI
 tile_set = SubResource("TileSet_8b7wv")
 
 [node name="Player" parent="." unique_id=1922037929 instance=ExtResource("4_player")]
+max_mana = 50.0
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1394209841]
+
+[node name="MainButtons" type="Panel" parent="HUD" unique_id=530580122]
+layout_direction = 2
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -254.0
+offset_top = -76.0
+offset_right = -20.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5vpkg")
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/MainButtons" unique_id=60522706]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -31.0
+offset_right = 112.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/MainButtons/MarginContainer" unique_id=1037443739]
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="HUD/MainButtons/MarginContainer/HBoxContainer" unique_id=466483220]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_jil70")
+
+[node name="Button2" type="Button" parent="HUD/MainButtons/MarginContainer/HBoxContainer" unique_id=37111581]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_jil70")
+
+[node name="Button3" type="Button" parent="HUD/MainButtons/MarginContainer/HBoxContainer" unique_id=88957836]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_jil70")
+
+[node name="Button4" type="Button" parent="HUD/MainButtons/MarginContainer/HBoxContainer" unique_id=1127704018]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_jil70")
