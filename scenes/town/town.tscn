@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://jsntwxeevih1" path="res://scenes/player/player.tscn" id="4_player"]
 [ext_resource type="Texture2D" uid="uid://vdni4gvweh4f" path="res://Sprites/Backgrounds/Tilesets/TilesetFloorDetail.png" id="5_5vpkg"]
 [ext_resource type="Texture2D" uid="uid://chl3tal0v806j" path="res://Sprites/Items/Tool/Axe.png" id="9_5ya6w"]
+[ext_resource type="Script" uid="uid://c2ecyvibmumm6" path="res://scenes/town/hud.gd" id="9_svnup"]
 [ext_resource type="Texture2D" uid="uid://gjnokcseymfk" path="res://Sprites/Items/Object/Bag.png" id="10_svnup"]
 [ext_resource type="Texture2D" uid="uid://mm445ygdhav3" path="res://Sprites/stats.png" id="11_yr8sw"]
 [ext_resource type="Texture2D" uid="uid://xyak03jnq3mj" path="res://Sprites/Rune.png" id="12_w25xm"]
@@ -3657,6 +3658,7 @@ tile_set = SubResource("TileSet_8b7wv")
 max_mana = 50.0
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1394209841]
+script = ExtResource("9_svnup")
 
 [node name="MainButtons" type="Panel" parent="HUD" unique_id=530580122]
 layout_direction = 2
@@ -3787,3 +3789,8 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("12_w25xm")
 stretch_mode = 5
+
+[connection signal="pressed" from="HUD/MainButtons/MarginContainer/HBoxContainer/EquipmentButton" to="HUD" method="_on_equipment_button_pressed"]
+[connection signal="pressed" from="HUD/MainButtons/MarginContainer/HBoxContainer/InventoryButton" to="HUD" method="_on_inventory_button_pressed"]
+[connection signal="pressed" from="HUD/MainButtons/MarginContainer/HBoxContainer/StatsButton" to="HUD" method="_on_stats_button_pressed"]
+[connection signal="pressed" from="HUD/MainButtons/MarginContainer/HBoxContainer/SkillButton" to="HUD" method="_on_skill_button_pressed"]
