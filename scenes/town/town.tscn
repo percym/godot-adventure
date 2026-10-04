@@ -3635,6 +3635,94 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_svnup"]
+bg_color = Color(0.21568628, 0.23137255, 0.28235295, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yr8sw"]
+bg_color = Color(0.4392157, 0.4627451, 0.54509807, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w25xm"]
+bg_color = Color(0.21568628, 0.23137255, 0.28235295, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dmgee"]
+bg_color = Color(0.4392157, 0.4627451, 0.54509807, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fwvjp"]
+bg_color = Color(0.21568628, 0.23137255, 0.28235295, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xbtnt"]
+bg_color = Color(0.4392157, 0.4627451, 0.54509807, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_my0xt"]
+bg_color = Color(0.28627452, 0.30588236, 0.36862746, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3sg37"]
+bg_color = Color(0.4392157, 0.4627451, 0.54509807, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
 [node name="Town" type="Node2D" unique_id=1649856343]
 
 [node name="Terrain" type="Node2D" parent="." unique_id=1172271546]
@@ -3703,6 +3791,8 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_styles/normal = SubResource("StyleBoxFlat_jil70")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_svnup")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yr8sw")
 
 [node name="TextureRect" type="TextureRect" parent="HUD/MainButtons/MarginContainer/HBoxContainer/EquipmentButton" unique_id=1306183383]
 custom_minimum_size = Vector2(30, 30)
@@ -3726,6 +3816,8 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_styles/normal = SubResource("StyleBoxFlat_jil70")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w25xm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dmgee")
 
 [node name="TextureRect" type="TextureRect" parent="HUD/MainButtons/MarginContainer/HBoxContainer/InventoryButton" unique_id=1198034088]
 custom_minimum_size = Vector2(30, 30)
@@ -3749,6 +3841,8 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_styles/normal = SubResource("StyleBoxFlat_jil70")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fwvjp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xbtnt")
 
 [node name="TextureRect" type="TextureRect" parent="HUD/MainButtons/MarginContainer/HBoxContainer/StatsButton" unique_id=338254443]
 custom_minimum_size = Vector2(30, 30)
@@ -3772,6 +3866,8 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_styles/normal = SubResource("StyleBoxFlat_jil70")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_my0xt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3sg37")
 
 [node name="TextureRect" type="TextureRect" parent="HUD/MainButtons/MarginContainer/HBoxContainer/SkillButton" unique_id=536254232]
 custom_minimum_size = Vector2(30, 30)
