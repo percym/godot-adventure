@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://gjnokcseymfk" path="res://Sprites/Items/Object/Bag.png" id="10_svnup"]
 [ext_resource type="Texture2D" uid="uid://mm445ygdhav3" path="res://Sprites/stats.png" id="11_yr8sw"]
 [ext_resource type="Texture2D" uid="uid://xyak03jnq3mj" path="res://Sprites/Rune.png" id="12_w25xm"]
-[ext_resource type="Texture2D" uid="uid://dbfg8jvijdjdb" path="res://Sprites/Items/Treasure/GoldCoin.png" id="14_yr8sw"]
+[ext_resource type="PackedScene" uid="uid://da8o8m6v8dbj4" path="res://scenes/ui/inventory_panel/inventory_panel.tscn" id="14_yr8sw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f2a5t"]
 texture = ExtResource("1_n11nm")
@@ -3724,22 +3724,6 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vky2r"]
-bg_color = Color(0.14901961, 0.16470589, 0.20784314, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
-shadow_size = 2
-shadow_offset = Vector2(4, 4)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fwdo8"]
-bg_color = Color(0.38039216, 0.39215687, 0.4392157, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
 [node name="Town" type="Node2D" unique_id=1649856343]
 
 [node name="Terrain" type="Node2D" parent="." unique_id=1172271546]
@@ -3920,204 +3904,8 @@ scale = Vector2(0.98912126, 1.059213)
 theme_override_constants/separation = 16
 alignment = 2
 
-[node name="InventoryPanel" type="PanelContainer" parent="HUD/Panels" unique_id=22937626]
-custom_minimum_size = Vector2(221, 0)
+[node name="InventoryPanel" parent="HUD/Panels" unique_id=824094848 instance=ExtResource("14_yr8sw")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_vky2r")
-
-[node name="MarginContainer" type="MarginContainer" parent="HUD/Panels/InventoryPanel" unique_id=396131434]
-layout_mode = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
-
-[node name="VBox" type="VBoxContainer" parent="HUD/Panels/InventoryPanel/MarginContainer" unique_id=271265121]
-layout_mode = 2
-
-[node name="Title" type="Label" parent="HUD/Panels/InventoryPanel/MarginContainer/VBox" unique_id=420814607]
-layout_mode = 2
-text = "Inventory"
-horizontal_alignment = 1
-
-[node name="Control" type="Control" parent="HUD/Panels/InventoryPanel/MarginContainer/VBox" unique_id=480677063]
-custom_minimum_size = Vector2(0, 5)
-layout_mode = 2
-
-[node name="ColorRect" type="ColorRect" parent="HUD/Panels/InventoryPanel/MarginContainer/VBox" unique_id=1222583000]
-custom_minimum_size = Vector2(0, 2)
-layout_mode = 2
-color = Color(0.1882353, 0.20784314, 0.25882354, 1)
-
-[node name="Container" type="GridContainer" parent="HUD/Panels/InventoryPanel/MarginContainer/VBox" unique_id=934220507]
-layout_mode = 2
-theme_override_constants/h_separation = 6
-theme_override_constants/v_separation = 6
-columns = 5
-
-[node name="InventorySlot" type="Button" parent="HUD/Panels/InventoryPanel/MarginContainer/VBox/Container" unique_id=1270690805]
-custom_minimum_size = Vector2(35, 35)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_fwdo8")
-
-[node name="InventorySlot2" type="Button" parent="HUD/Panels/InventoryPanel/MarginContainer/VBox/Container" unique_id=169025446]
-custom_minimum_size = Vector2(35, 35)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_fwdo8")
-
-[node name="InventorySlot3" type="Button" parent="HUD/Panels/InventoryPanel/MarginContainer/VBox/Container" unique_id=518490244]
-custom_minimum_size = Vector2(35, 35)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_fwdo8")
-
-[node name="InventorySlot4" type="Button" parent="HUD/Panels/InventoryPanel/MarginContainer/VBox/Container" unique_id=1340546297]
-custom_minimum_size = Vector2(35, 35)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_fwdo8")
-
-[node name="InventorySlot5" type="Button" parent="HUD/Panels/InventoryPanel/MarginContainer/VBox/Container" unique_id=1554707516]
-custom_minimum_size = Vector2(35, 35)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_fwdo8")
-
-[node name="InventorySlot6" type="Button" parent="HUD/Panels/InventoryPanel/MarginContainer/VBox/Container" unique_id=1394325208]
-custom_minimum_size = Vector2(35, 35)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_fwdo8")
-
-[node name="InventorySlot7" type="Button" parent="HUD/Panels/InventoryPanel/MarginContainer/VBox/Container" unique_id=90729339]
-custom_minimum_size = Vector2(35, 35)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_fwdo8")
-
-[node name="InventorySlot8" type="Button" parent="HUD/Panels/InventoryPanel/MarginContainer/VBox/Container" unique_id=24795446]
-custom_minimum_size = Vector2(35, 35)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_fwdo8")
-
-[node name="InventorySlot9" type="Button" parent="HUD/Panels/InventoryPanel/MarginContainer/VBox/Container" unique_id=399362479]
-custom_minimum_size = Vector2(35, 35)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_fwdo8")
-
-[node name="InventorySlot10" type="Button" parent="HUD/Panels/InventoryPanel/MarginContainer/VBox/Container" unique_id=126862909]
-custom_minimum_size = Vector2(35, 35)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_fwdo8")
-
-[node name="InventorySlot11" type="Button" parent="HUD/Panels/InventoryPanel/MarginContainer/VBox/Container" unique_id=691021873]
-custom_minimum_size = Vector2(35, 35)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_fwdo8")
-
-[node name="InventorySlot12" type="Button" parent="HUD/Panels/InventoryPanel/MarginContainer/VBox/Container" unique_id=177362940]
-custom_minimum_size = Vector2(35, 35)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_fwdo8")
-
-[node name="InventorySlot13" type="Button" parent="HUD/Panels/InventoryPanel/MarginContainer/VBox/Container" unique_id=1921249401]
-custom_minimum_size = Vector2(35, 35)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_fwdo8")
-
-[node name="InventorySlot14" type="Button" parent="HUD/Panels/InventoryPanel/MarginContainer/VBox/Container" unique_id=927298936]
-custom_minimum_size = Vector2(35, 35)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_fwdo8")
-
-[node name="InventorySlot15" type="Button" parent="HUD/Panels/InventoryPanel/MarginContainer/VBox/Container" unique_id=284356470]
-custom_minimum_size = Vector2(35, 35)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_fwdo8")
-
-[node name="InventorySlot16" type="Button" parent="HUD/Panels/InventoryPanel/MarginContainer/VBox/Container" unique_id=1022808156]
-custom_minimum_size = Vector2(35, 35)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_fwdo8")
-
-[node name="InventorySlot17" type="Button" parent="HUD/Panels/InventoryPanel/MarginContainer/VBox/Container" unique_id=1104203615]
-custom_minimum_size = Vector2(35, 35)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_fwdo8")
-
-[node name="InventorySlot18" type="Button" parent="HUD/Panels/InventoryPanel/MarginContainer/VBox/Container" unique_id=435900303]
-custom_minimum_size = Vector2(35, 35)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_fwdo8")
-
-[node name="InventorySlot19" type="Button" parent="HUD/Panels/InventoryPanel/MarginContainer/VBox/Container" unique_id=853463722]
-custom_minimum_size = Vector2(35, 35)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_fwdo8")
-
-[node name="InventorySlot20" type="Button" parent="HUD/Panels/InventoryPanel/MarginContainer/VBox/Container" unique_id=777305532]
-custom_minimum_size = Vector2(35, 35)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_fwdo8")
-
-[node name="InventorySlot21" type="Button" parent="HUD/Panels/InventoryPanel/MarginContainer/VBox/Container" unique_id=256385579]
-custom_minimum_size = Vector2(35, 35)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_fwdo8")
-
-[node name="InventorySlot22" type="Button" parent="HUD/Panels/InventoryPanel/MarginContainer/VBox/Container" unique_id=264261674]
-custom_minimum_size = Vector2(35, 35)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_fwdo8")
-
-[node name="InventorySlot23" type="Button" parent="HUD/Panels/InventoryPanel/MarginContainer/VBox/Container" unique_id=1206836417]
-custom_minimum_size = Vector2(35, 35)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_fwdo8")
-
-[node name="InventorySlot24" type="Button" parent="HUD/Panels/InventoryPanel/MarginContainer/VBox/Container" unique_id=1842658077]
-custom_minimum_size = Vector2(35, 35)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_fwdo8")
-
-[node name="InventorySlot25" type="Button" parent="HUD/Panels/InventoryPanel/MarginContainer/VBox/Container" unique_id=1757137375]
-custom_minimum_size = Vector2(35, 35)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_fwdo8")
-
-[node name="InventorySlot26" type="Button" parent="HUD/Panels/InventoryPanel/MarginContainer/VBox/Container" unique_id=86420088]
-custom_minimum_size = Vector2(35, 35)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_fwdo8")
-
-[node name="InventorySlot27" type="Button" parent="HUD/Panels/InventoryPanel/MarginContainer/VBox/Container" unique_id=1339326788]
-custom_minimum_size = Vector2(35, 35)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_fwdo8")
-
-[node name="InventorySlot28" type="Button" parent="HUD/Panels/InventoryPanel/MarginContainer/VBox/Container" unique_id=1601709292]
-custom_minimum_size = Vector2(35, 35)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_fwdo8")
-
-[node name="InventorySlot29" type="Button" parent="HUD/Panels/InventoryPanel/MarginContainer/VBox/Container" unique_id=1102912957]
-custom_minimum_size = Vector2(35, 35)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_fwdo8")
-
-[node name="InventorySlot30" type="Button" parent="HUD/Panels/InventoryPanel/MarginContainer/VBox/Container" unique_id=1655113380]
-custom_minimum_size = Vector2(35, 35)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_fwdo8")
-
-[node name="HBox" type="HBoxContainer" parent="HUD/Panels/InventoryPanel/MarginContainer/VBox" unique_id=1176796122]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="HUD/Panels/InventoryPanel/MarginContainer/VBox/HBox" unique_id=1310505499]
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 2
-texture = ExtResource("14_yr8sw")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="HUD/Panels/InventoryPanel/MarginContainer/VBox/HBox" unique_id=1967731640]
-layout_mode = 2
-text = "3000"
 
 [connection signal="pressed" from="HUD/MainButtons/MarginContainer/HBoxContainer/EquipmentButton" to="HUD" method="_on_equipment_button_pressed"]
 [connection signal="pressed" from="HUD/MainButtons/MarginContainer/HBoxContainer/InventoryButton" to="HUD" method="_on_inventory_button_pressed"]
